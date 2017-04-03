@@ -6,6 +6,7 @@ This repo is for debugging a problem I'm having with nodemon
 
 - clone this repo
 - `npm i`
+- `npm i -g nodemon`
 
 ## Reproducing the problem
 
@@ -17,7 +18,11 @@ This repo is for debugging a problem I'm having with nodemon
 - OBSERVE the process is indeed restarted (GOOD)
 - Modify the `node_modules/is-number/index.js` file and save it
 - Expect nothing to happen since we tell nodemon to ignore all node_modules except for `is-node` in [nodemon.json](nodemon.json)
-- OBSERVE the process restarted by nodemon (THIS IS INCORRECT)
+- OBSERVE the process is restarted by nodemon (THIS IS INCORRECT)
+
+## Why is it doing this?
+
+I think this may be related to [fuzzy comparison](https://github.com/remy/nodemon/pull/922).
 
 ## Next steps
 
