@@ -14,11 +14,11 @@ This repo is for debugging a problem I'm having with nodemon
 
 - `npm start`: Observe index.js runs and exits and nodemon says it's watching for changes
 - Modify the `node_modules/is-node/index.js` file and save it
-- Expect nodemon to restart the process (since we removed `node_modules` from `ignoreRoot` in [nodemon.json](nodemon.json))
-- OBSERVE the process is indeed restarted (GOOD)
+- **Expect** nodemon to restart the process (since we removed `node_modules` from `ignoreRoot` in [nodemon.json](nodemon.json))
+- **Observe** the process is indeed restarted (GOOD)
 - Modify the `node_modules/is-number/index.js` file and save it
-- Expect nothing to happen since we tell nodemon to ignore all node_modules except for `is-node` in [nodemon.json](nodemon.json)
-- OBSERVE the process is restarted by nodemon (THIS IS INCORRECT)
+- **Expect** nothing to happen since we tell nodemon to ignore all node_modules except for `is-node` in [nodemon.json](nodemon.json)
+- **Observe** the process is restarted by nodemon (THIS IS INCORRECT)
 
 ## Why is it doing this?
 
