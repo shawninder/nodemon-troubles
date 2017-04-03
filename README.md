@@ -1,6 +1,10 @@
-# nodemon troubles
+# Unignoring specific node modules
 
-This repo is for debugging a problem I'm having with nodemon
+This repo is for debugging a problem I'm having with nodemon: I am unable to ignore all node_modules except for one of them.
+
+This can be useful wherever `npm link` is useful, watching that particular linked module but ignoring its siblings or children.
+
+The code in this repo represents my best attempt yet.
 
 ## Installation
 
@@ -15,18 +19,14 @@ This repo is for debugging a problem I'm having with nodemon
 - `npm start`: Observe index.js runs and exits and nodemon says it's watching for changes
 - Modify the `node_modules/is-node/index.js` file and save it
 - **Expect** nodemon to restart the process (since we removed `node_modules` from `ignoreRoot` in [nodemon.json](nodemon.json))
-- **Observe** the process is indeed restarted (GOOD)
+- **Observe** the process is indeed restarted (**PASS**)
 - Modify the `node_modules/is-number/index.js` file and save it
 - **Expect** nothing to happen since we tell nodemon to ignore all node_modules except for `is-node` in [nodemon.json](nodemon.json)
-- **Observe** the process is restarted by nodemon (THIS IS INCORRECT)
+- **Observe** the process is restarted by nodemon (**FAIL**)
 
 ## Why is it doing this?
 
 I think this may be related to [fuzzy comparison](https://github.com/remy/nodemon/pull/922).
-
-## Next steps
-
-Now that I have reproduced the problem, I have to figure out if there is any way to modify `nodemon.json` to obtain the behavior I want or if nodemon itself has to be fixed.
 
 ## HELP
 
