@@ -16,10 +16,15 @@ The code in this repo represents my best attempt yet.
 
 `npm start` runs index.js with nodemon, which is configured via [nodemon.json](nodemon.json) to ignore all node_modules except for `is-node`. Hence:
 
+### setup
 - `npm start`: Observe index.js runs and exits and nodemon says it's watching for changes
+
+### Test 1
 - Modify the `node_modules/is-node/index.js` file and save it
 - **Expect** nodemon to restart the process (since we removed `node_modules` from `ignoreRoot` in [nodemon.json](nodemon.json))
 - **Observe** the process is indeed restarted (**PASS**)
+
+### Test 2
 - Modify the `node_modules/is-number/index.js` file and save it
 - **Expect** nothing to happen since we tell nodemon to ignore all node_modules except for `is-node` in [nodemon.json](nodemon.json)
 - **Observe** the process is restarted by nodemon (**FAIL**)
