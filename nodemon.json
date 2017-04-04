@@ -7,7 +7,7 @@
     "coverage"
   ],
   "ignore": [
-    "node_modules/!(is-node)",
-    "node_modules/is-node/node_modules"
+    "node_modules/!(is-node)/**/*",
+    "node_modules/is-node/node_modules/**/*"
   ]
 }
