@@ -29,10 +29,6 @@ The code in this repo represents my best attempt yet.
 - **Expect** nothing to happen since we tell nodemon to ignore all node_modules except for `is-node` in [nodemon.json](nodemon.json)
 - **Observe** the process is restarted by nodemon (**FAIL**)
 
-## Why is it doing this?
-
-I think this may be related to [fuzzy comparison](https://github.com/remy/nodemon/pull/922).
-
 ## HELP
 
 If anyone comes across this and knows a solution to this problem, please help me out by providing the answer on [the associated stackoverflow question](http://stackoverflow.com/questions/43189360/how-can-i-tell-nodemon-to-ignore-all-node-modules-except-for-one-directory)
